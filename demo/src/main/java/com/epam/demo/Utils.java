@@ -7,12 +7,15 @@ import java.util.List;
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
 
+        if (args == null) {
+            return false;
+        }
+
+        if (args.size() == 0) {
+            return false;
+        }
+
         for (String s : args) {
-//            int x = Integer.parseInt(s);
-//
-//            if (x <= 0) {
-//                return false;
-//            }
 
             if (!StringUtils.isPositiveNumber(s)) {
                 return false;
