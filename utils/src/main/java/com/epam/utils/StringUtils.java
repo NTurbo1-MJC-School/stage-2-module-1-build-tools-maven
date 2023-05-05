@@ -7,15 +7,15 @@ public class StringUtils {
             return false;
         }
 
-        float x = 0;
+        double x = 0.0;
 
         try {
-            x = Float.parseFloat(str);
+            x = Double.parseDouble(str);
         } catch (NumberFormatException e) {
             return false;
         }
 
-        if (x >= 0) {
+        if (x > 0.0) {
             return true;
         }
 
