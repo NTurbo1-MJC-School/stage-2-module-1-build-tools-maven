@@ -15,6 +15,8 @@
 
     <properties>
         <junit.version>5.8.1</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -32,9 +34,31 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
+                <version>3.8.1</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <dependencies>
+                    <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-surefire-provider -->
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.3.2</version>
+                        <scope>compile</scope>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.8.2</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
