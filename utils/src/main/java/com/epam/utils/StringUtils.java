@@ -3,6 +3,10 @@ package com.epam.utils;
 public class StringUtils {
     public static boolean isPositiveNumber(String str) {
 
+        if (str == null) {
+            return false;
+        }
+
         float x = 0;
 
         try {
@@ -11,7 +15,7 @@ public class StringUtils {
             return false;
         }
 
-        if (x > 0) {
+        if (x >= 0) {
             return true;
         }
 
